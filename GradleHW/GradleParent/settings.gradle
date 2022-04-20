@@ -1,0 +1,4 @@
+rootProject.name = 'GradleParent'
+include 'GradleApi'
+include 'GradleImpl'
+

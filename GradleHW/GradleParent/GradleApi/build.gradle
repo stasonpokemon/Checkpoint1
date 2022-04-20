@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = '8'
+
+group 'com.epam.gradle'
+version '1.0-SNAPSHOT'
+
+task helloFromApi {
+    doFirst {
+        println "Hello from api!"
+    }
+}

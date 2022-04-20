@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'com.epam.gradle'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+task helloWorld {
+    doFirst {
+        println "Hello world! This is my first task in the gradle"
+    }
+}
+
+task copyDocs(type: Copy) {
+    from "GradleImpl/src"
+    into "build/docs"
+//    include "**/*md"
+    includeEmptyDirs = false
+}
+
+task createZip(type: Zip) {
+    from "build/docs"
+    archiveFileName = "docs.zip"
+    destinationDirectory = file("build/dist")
+    dependsOn copyDocs
+}
